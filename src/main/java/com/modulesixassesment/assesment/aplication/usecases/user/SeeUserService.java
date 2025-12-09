@@ -3,6 +3,7 @@ package com.modulesixassesment.assesment.aplication.usecases.user;
 import com.modulesixassesment.assesment.domain.model.User;
 import com.modulesixassesment.assesment.domain.port.in.user.SeeUserUseCase;
 import com.modulesixassesment.assesment.domain.port.out.UserRepositoryPort;
+import com.modulesixassesment.assesment.infrastructure.adapters.in.web.exceptions.custom.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,9 +31,9 @@ public class SeeUserService implements SeeUserUseCase {
         boolean found = userRepositoryPort.existsByUsername(username);
 
         if (!found){
-            return false;
+            throw new NotFoundException("Theres no user with the name: " + username);
         }
 
-        return true;
+        return found;
     }
 }
