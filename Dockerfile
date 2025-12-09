@@ -1,14 +1,14 @@
-# Usamos Java 21
-FROM eclipse-temurin:21-jdk
+# Usamos Java 21 (coincide con tu pom.xml)
+FROM eclipse-temurin:21-jdk-alpine
 
 # Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiamos el JAR generado por Maven
-COPY target/app.jar app.jar
+# Copiamos el JAR generado al contenedor
+COPY target/UserHistory-0.0.1-SNAPSHOT.jar app.jar
 
-# Exponemos el puerto 8080
+# Puerto que expondrá el contenedor
 EXPOSE 8080
 
-# Comando para ejecutar la app
+# Comando para ejecutar la aplicación
 ENTRYPOINT ["java","-jar","app.jar"]

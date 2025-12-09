@@ -88,6 +88,13 @@ POST register: http://localhost:8080/auth/register
 POST login : http://localhost:8080/auth/login
 ```
 
+## DOCKER
+```
+mvn clean package -DskipTests
+ls target/
+sudo docker build -t userhistory-app .
+sudo docker run -p 8080:8080 userhistory-app
+```
 
 By: Mateo Algarin Rendon
 
