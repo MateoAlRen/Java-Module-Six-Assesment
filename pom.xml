@@ -141,6 +141,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
+
 			<!-- JAVA COMPILER -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

@@ -5,12 +5,14 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class JwtService {
@@ -26,7 +28,11 @@ public class JwtService {
     public String generateToken(UserDetails user) {
         List<String> roles = user.getAuthorities().stream()
                 .map(auth -> auth.getAuthority().replace("ROLE_", ""))
-                .toList();
+                .collect(Collectors.toList());
+        System.out.println("Roles in JWT: " + roles);
+        System.out.println("SecurityContext authentication: " +
+                SecurityContextHolder.getContext().getAuthentication());
+
 
         return Jwts.builder()
                 .setSubject(user.getUsername())
