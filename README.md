@@ -88,6 +88,21 @@ POST register: http://localhost:8080/auth/register
 POST login : http://localhost:8080/auth/login
 ```
 
+## ADMIN TEST
+
+<img width="844" height="546" alt="Image" src="https://github.com/user-attachments/assets/c4dc3ee7-950b-41a1-b0ac-675fb2c9414d" />
+
+## AFFILIATED TEST
+
+<img width="853" height="481" alt="Image" src="https://github.com/user-attachments/assets/347fa48c-6a73-4aad-8d4c-21d7bc4bdadc" />
+
+
+<img width="860" height="470" alt="Image" src="https://github.com/user-attachments/assets/23a17166-3ec7-441f-9f9f-313531a273e2" />
+
+
+<img width="860" height="470" alt="Image" src="https://github.com/user-attachments/assets/6f0b1abe-27fb-4c43-8cfa-f418748f5fcd" />
+
+
 ## DOCKER
 ```
 mvn clean package -DskipTests
